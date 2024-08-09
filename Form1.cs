@@ -6,25 +6,25 @@ using System.Windows.Forms;
 
 namespace SuperCopyDelta
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
         }
 
-        private void btnBrowseSource_click(object sender, EventArgs e)
+        private void BtnBrowseSource_Click(object sender, EventArgs e)
         {
             using (FolderBrowserDialog fbd = new FolderBrowserDialog())
             {
                 if (fbd.ShowDialog() == DialogResult.OK)
                 {
-                    SecurityContextSource.Text = fbd.SelectedPath;
+                    txtSource.Text = fbd.SelectedPath;
                 }
             }
         }
 
-        private void btnBrowseDestination_Click(object sender, EventArgs e)
+        private void BtnBrowseDestination_Click(object sender, EventArgs e)
         {
             using (FolderBrowserDialog fbd = new FolderBrowserDialog())
             {
@@ -35,7 +35,7 @@ namespace SuperCopyDelta
             }
         }
 
-        private void btnStartCopy_Click(object sender, EventArgs e)
+        private void BtnStartCopy_Click(object sender, EventArgs e)
         {
             string source = txtSource.Text;
             string destination = txtDestination.Text;
@@ -81,6 +81,11 @@ namespace SuperCopyDelta
             {
                 MessageBox.Show($"An error occurred: {ex.Message}");
             }
+        }
+
+        private void BtnSettings_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

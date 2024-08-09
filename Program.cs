@@ -1,3 +1,6 @@
+using System;
+using System.Windows.Forms;
+
 namespace SuperCopyDelta
 {
     internal static class Program
@@ -10,8 +13,10 @@ namespace SuperCopyDelta
         {
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
+            Application.SetCompatibleTextRenderingDefault(false);
             ApplicationConfiguration.Initialize();
-            Application.Run(new Form1());
+            Application.Run(new MainForm());
+            Application.EnableVisualStyles();
         }
     }
 }
